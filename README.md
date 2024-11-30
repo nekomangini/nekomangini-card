@@ -1,2 +1,1 @@
-# nekomangini-card
-nekomangini landing page
+# Vue 3 + TypeScript + Vite
