@@ -18,12 +18,12 @@ const socialLinksData = ref<SocialLink[]>(socialLinks);
 const actionLinksData = ref<ActionLink[]>(actionLinks);
 
 // Event handlers
-const handleSocialClick = (platform: string, url: string): void => {
+const handleSocialClick = (url: string): void => {
   // console.log(`Navigating to ${platform} social profile`);
   window.open(url, "_blank");
 };
 
-const handleActionClick = (label: string, url: string): void => {
+const handleActionClick = (url: string): void => {
   // console.log(`Navigating to ${label} page`);
   window.open(url, "_blank");
 };
