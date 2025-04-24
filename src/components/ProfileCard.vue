@@ -18,12 +18,12 @@ const socialLinksData = ref<SocialLink[]>(socialLinks);
 const actionLinksData = ref<ActionLink[]>(actionLinks);
 
 // Event handlers
-const handleSocialClick = (url: string): void => {
+const handleSocialClick = (_platform: string, url: string): void => {
   // console.log(`Navigating to ${platform} social profile`);
   window.open(url, "_blank");
 };
 
-const handleActionClick = (url: string): void => {
+const handleActionClick = (_label: string, url: string): void => {
   // console.log(`Navigating to ${label} page`);
   window.open(url, "_blank");
 };
@@ -33,6 +33,7 @@ const handleActionClick = (url: string): void => {
   <div class="background-container">
     <div class="content-container">
       <div class="glass-container">
+
         <div class="social-media">
           <!-- Profile Avatar -->
           <img :src="profile.avatar" :alt="`${profile.name}'s avatar`" class="profile-avatar" />

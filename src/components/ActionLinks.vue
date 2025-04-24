@@ -2,7 +2,7 @@
 import { defineEmits } from "vue";
 import type { ActionLink } from "@/types/NekomanginiType";
 
-const props = defineProps<{
+const { links } = defineProps<{
   links: ActionLink[];
 }>();
 
@@ -18,7 +18,7 @@ const handleActionClick = (label: string, url: string) => {
 <template>
   <div id="btn-links">
     <ul>
-      <li v-for="link in props.links" :key="link.label">
+      <li v-for="link in links" :key="link.label">
         <a :href="link.url" @click.prevent="handleActionClick(link.label, link.url)">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path :d="link.svgPath" />
