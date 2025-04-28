@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { defineEmits } from "vue";
-import type { ActionLink } from "@/types/NekomanginiType";
+import type { ActionType } from "@/types/NekomanginiType";
 
 const { links } = defineProps<{
-  links: ActionLink[];
+  links: ActionType[];
 }>();
 
 const emit = defineEmits<{
@@ -19,7 +19,10 @@ const handleActionClick = (label: string, url: string) => {
   <div id="btn-links">
     <ul>
       <li v-for="link in links" :key="link.label">
-        <a :href="link.url" @click.prevent="handleActionClick(link.label, link.url)">
+        <a
+          :href="link.url"
+          @click.prevent="handleActionClick(link.label, link.url)"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path :d="link.svgPath" />
           </svg>
@@ -44,9 +47,11 @@ const handleActionClick = (label: string, url: string) => {
 }
 
 #btn-links a {
-  background-image: linear-gradient(243deg,
-      #8c8c8c 0%,
-      rgba(61, 61, 61, 1) 74%);
+  background-image: linear-gradient(
+    243deg,
+    #8c8c8c 0%,
+    rgba(61, 61, 61, 1) 74%
+  );
   backdrop-filter: blur(12px);
   display: flex;
   align-items: center;

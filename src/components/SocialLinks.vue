@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { defineEmits } from "vue";
-import type { SocialLink } from "@/types/NekomanginiType";
+import type { SocialType } from "@/types/NekomanginiType";
 
 const { links } = defineProps<{
-  links: SocialLink[];
+  links: SocialType[];
 }>();
 
 const emit = defineEmits<{
@@ -18,7 +18,11 @@ const handleSocialClick = (platform: string, url: string) => {
 <template>
   <ul class="social-links">
     <li v-for="link in links" :key="link.platform">
-      <a :href="link.url" @click.prevent="handleSocialClick(link.platform, link.url)" :aria-label="link.label">
+      <a
+        :href="link.url"
+        @click.prevent="handleSocialClick(link.platform, link.url)"
+        :aria-label="link.label"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path :d="link.svgPath" />
         </svg>

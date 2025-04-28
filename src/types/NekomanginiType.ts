@@ -1,4 +1,4 @@
-export interface SocialLink {
+export interface SocialType {
   platform: string;
   icon: string;
   url: string;
@@ -6,14 +6,14 @@ export interface SocialLink {
   svgPath: string;
 }
 
-export interface ActionLink {
+export interface ActionType {
   icon: string;
   label: string;
   url: string;
   svgPath: string;
 }
 
-export interface ProfileData {
+export interface ProfileType {
   name: string;
   title: string;
   avatar: string;

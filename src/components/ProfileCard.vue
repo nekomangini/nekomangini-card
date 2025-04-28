@@ -7,15 +7,15 @@ import ActionLinks from "./ActionLinks.vue";
 import { profileData, socialLinks, actionLinks } from "@/data/nekomanginiData";
 // Types
 import type {
-  ProfileData,
-  SocialLink,
-  ActionLink,
+  ProfileType,
+  SocialType,
+  ActionType,
 } from "@/types/NekomanginiType";
 
 // Reactive profile data
-const profile = ref<ProfileData>(profileData);
-const socialLinksData = ref<SocialLink[]>(socialLinks);
-const actionLinksData = ref<ActionLink[]>(actionLinks);
+const profile = ref<ProfileType>(profileData);
+const socialLinksData = ref<SocialType[]>(socialLinks);
+const actionLinksData = ref<ActionType[]>(actionLinks);
 
 // Event handlers
 const handleSocialClick = (_platform: string, url: string): void => {
@@ -33,13 +33,19 @@ const handleActionClick = (_label: string, url: string): void => {
   <div class="background-container">
     <div class="content-container">
       <div class="glass-container">
-
         <div class="social-media">
           <!-- Profile Avatar -->
-          <img :src="profile.avatar" :alt="`${profile.name}'s avatar`" class="profile-avatar" />
+          <img
+            :src="profile.avatar"
+            :alt="`${profile.name}'s avatar`"
+            class="profile-avatar"
+          />
 
           <!-- Social Media Links Component -->
-          <SocialLinks :links="socialLinksData" @social-click="handleSocialClick" />
+          <SocialLinks
+            :links="socialLinksData"
+            @social-click="handleSocialClick"
+          />
         </div>
 
         <hr />
@@ -51,7 +57,10 @@ const handleActionClick = (_label: string, url: string): void => {
         <hr />
 
         <!-- Action Links Component -->
-        <ActionLinks :links="actionLinksData" @action-click="handleActionClick" />
+        <ActionLinks
+          :links="actionLinksData"
+          @action-click="handleActionClick"
+        />
       </div>
     </div>
   </div>
@@ -136,7 +145,6 @@ button {
 
 /* Media query for mobile devices */
 @media screen and (max-width: 768px) {
-
   /* Ensure full width and remove potential horizontal scrolling */
   body,
   html {
