@@ -74,4 +74,37 @@ const handleActionClick = (label: string, url: string) => {
   margin-right: 20px;
   fill: #bdbdbd;
 }
+
+/* Animations */
+/* Apply animation correctly to ul > li elements */
+#btn-links li {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fallIn 0.7s ease-out forwards;
+}
+
+/* Stagger effect for each item */
+#btn-links li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+#btn-links li:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+#btn-links li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fallIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>

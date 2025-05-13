@@ -243,4 +243,24 @@ button {
     padding: 0.75rem;
   }
 }
+
+/* Animations */
+h1 {
+  opacity: 0;
+  /* transform: translateX(-50px); */
+  /* Start from the left */
+  animation: slideIn 1.2s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 </style>

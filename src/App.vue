@@ -5,7 +5,23 @@ ProfileCard;
 </script>
 
 <template>
-  <ProfileCard />
+  <div class="fade-in">
+    <ProfileCard />
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.fade-in {
+  animation: fade-in 1.6s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+</style>
